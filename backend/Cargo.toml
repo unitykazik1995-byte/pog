@@ -1,0 +1,36 @@
+[package]
+name = "oko_saurona_core"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+# JNI for Android communication
+jni = "0.21.1"
+
+# FFI for Flutter communication
+libc = "0.2"
+
+# ONNX Runtime integration
+ort = { version = "2.0.0-rc.2", features = ["fetch-models", "ndarray"] }
+
+# Multi-target Tracking (using a Rust port/implementation of SORT/ByteTrack)
+# Using placeholder for tracking logic
+uuid = { version = "1.6", features = ["v4"] }
+
+# Matrices & math
+ndarray = "0.15.6"
+image = "0.24.7"
+
+# Concurrency & async
+tokio = { version = "1.35", features = ["full"] }
+crossbeam-channel = "0.5.11"
+
+# SQLCipher / SQLite (encrypted db)
+rusqlite = { version = "0.30.0", features = ["sqlcipher"] }
+
+# Serde for JSON/Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
